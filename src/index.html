@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tron game</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="index.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body onload="init();">
+	<div>
+		<table>
+			<!-- Row de bienvenu -->
+			<tr><td colspan="3">Bienvenu !</td></tr>
+
+			<!-- Row des règles du jeu -->
+			<tr style="text-align: left;">
+				<td colspan="3">
+					<fieldset>
+						<legend>Règles du jeu</legend>
+						Les règles du jeu sont simples : le but est de parcourir la grille sans en sortir 
+						et sans mordre sur le parcours de son adversaire. Faire un retour arrière est
+						également inderdit.<br><br>
+						Le premier joueur à enfreindre ces règles a perdu !
+					</fieldset>
+				</td>
+			</tr>
+
+			<!-- Row qui affiche le nom du joueur qui doit jouer -->
+			<tr><td colspan="3"><span id="joueurName"></span></td></tr>
+
+			<!-- Row qui affiche les controles et la grille -->
+			<tr>
+				<td>
+					<div>
+						<span id="spanJoueur1" style="font-weight: bold;"></span><br><br>
+						<kbd>z</kbd> : haut<br>
+						<kbd>q</kbd> : gauche<br>
+						<kbd>s</kbd> : bas<br>
+						<kbd>d</kbd> : droite
+					</div>
+				</td>
+				<td><canvas id="grid"></canvas></td>
+				<td>
+					<div>
+						<span id="spanJoueur2" style="font-weight: bold;"></span><br><br>
+						<kbd>o</kbd> : haut<br>
+						<kbd>k</kbd> : gauche<br>
+						<kbd>l</kbd> : bas<br>
+						<kbd>m</kbd> : droite
+					</div>
+				</td>
+			</tr>
+
+			<!-- Row qui affiche le score -->
+			<tr>
+				<td></td>
+				<td id="score" style="font-weight: bold;"></td>
+				<td></td>
+			</tr>
+
+			<!-- Rows qui affichent les boutons -->
+			<tr>
+				<td></td>
+				<td><button id="haut" onclick="play(this);">↑</button></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button id="gauche" onclick="play(this);">←</button>
+					<button id="droite" onclick="play(this);">→</button>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button id="bas" onclick="play(this);">↓</button></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
